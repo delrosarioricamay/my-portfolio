@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rica May N. Del Rosario | Portfolio</title>
+
+<style>
+/* =========================
+   RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #11100f;
+    color: #f4eee5;
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: 0.4s;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+/* =========================
+   LIGHT MODE
+========================= */
+body.light {
+    background: #f4eee5;
+    color: #1b1917;
+}
+
+body.light header {
+    background: rgba(244,238,229,0.85);
+    border-bottom: 1px solid #d6cec2;
+}
+
+body.light .nav-links a {
+    color: #292521;
+}
+
+body.light .hero-card,
+body.light .about-box,
+body.light .skill-card,
+body.light .project-card,
+body.light .contact-box {
+    background: #fffaf3;
+    border-color: #ddd3c5;
+}
+
+body.light .terminal {
+    background: #211f1d;
+    color: #eee5d8;
+}
+
+body.light .muted {
+    color: #6c6259;
+}
+
+/* =========================
+   VARIABLES
+========================= */
+:root {
+    --orange: #e87945;
+    --orange-light: #f09a70;
+    --cream: #f4eee5;
+    --dark: #11100f;
+    --gray: #a9a097;
+    --border: rgba(255,255,255,0.11);
+    --card: rgba(255,255,255,0.045);
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+.background-grid {
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+    background-image:
+        linear-gradient(rgba(107, 3, 3, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 45px 45px;
+    mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+
+.orb {
+    position: fixed;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: rgba(232,121,69,0.13);
+    filter: blur(80px);
+    z-index: -2;
+    top: 10%;
+    right: -120px;
+    animation: float 8s ease-in-out infinite;
+}
+
+.orb.two {
+    width: 250px;
+    height: 250px;
+    left: -100px;
+    top: 60%;
+    background: rgba(240,154,112,0.09);
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(17,16,15,0.78);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    max-width: 1150px;
+    margin: auto;
+    height: 75px;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--orange);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 0.88rem;
+    color: #c7beb4;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--orange);
+}
+
+.nav-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.icon-btn,
+.menu-btn {
+    border: 1px solid var(--border);
+    background: transparent;
+    color: inherit;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.menu-btn {
+    display: none;
+}
+
+/* =========================
+   GENERAL
+========================= */
+section {
+    max-width: 1150px;
+    margin: auto;
+    padding: 100px 25px;
+}
+
+.eyebrow {
+    color: var(--orange);
+    font-family: monospace;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.section-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+}
+
+.section-description {
+    color: var(--gray);
+    max-width: 650px;
+    margin-bottom: 45px;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+    min-height: 100vh;
+    padding-top: 130px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    line-height: 0.9;
+    letter-spacing: -7px;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--orange);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #c4bbb1;
+    max-width: 570px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 21px;
+    border-radius: 7px;
+    border: 1px solid var(--orange);
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.btn.primary {
+    background: var(--orange);
+    color: #17110d;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn.secondary {
+    color: var(--orange-light);
+}
+
+/* =========================
+   PROFILE / TERMINAL
+========================= */
+.visual {
+    position: relative;
+}
+
+.photo-frame {
+    width: 300px;
+    height: 360px;
+    margin: auto;
+    padding: 12px;
+    border: 1px solid rgba(232,121,69,0.55);
+    transform: rotate(3deg);
+    background: #191715;
+    box-shadow: 25px 25px 0 rgba(232,121,69,0.1);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.9);
+}
+
+.photo-label {
+    position: absolute;
+    bottom: -30px;
+    left: 20px;
+    background: var(--orange);
+    color: #18110d;
+    padding: 8px 14px;
+    font-family: monospace;
+    font-size: 0.8rem;
+    transform: rotate(-4deg);
+}
+
+.terminal {
+    position: absolute;
+    width: 270px;
+    right: -35px;
+    bottom: -65px;
+    background: #1b1918;
+    border: 1px solid #39332e;
+    border-radius: 10px;
+    padding: 17px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.4);
+    font-family: monospace;
+    font-size: 0.78rem;
+}
+
+.terminal-top {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #777;
+}
+
+.code-orange {
+    color: #f09a70;
+}
+
+.code-gray {
+    color: #928980;
+}
+
+/* =========================
+   ABOUT
+========================= */
+.about-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 35px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+}
+
+.quote {
+    border-left: 3px solid var(--orange);
+    padding-left: 20px;
+    font-family: Georgia, serif;
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.info-list {
+    display: grid;
+    gap: 12px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+}
+
+.info-item span:first-child {
+    color: var(--gray);
+}
+
+/* =========================
+   SKILLS
+========================= */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 17px;
+}
+
+.skill-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 25px;
+    border-radius: 14px;
+    transition: 0.35s;
+}
+
+.skill-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(232,121,69,.6);
+}
+
+.skill-number {
+    color: var(--orange);
+    font-family: monospace;
+    font-size: 0.8rem;
+}
+
+.skill-card h3 {
+    margin: 25px 0 10px;
+}
+
+.skill-card p {
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+.filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    background: transparent;
+    color: inherit;
+    border: 1px solid var(--border);
+    padding: 9px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--orange);
+    color: #17110d;
+    border-color: var(--orange);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.project-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 30px;
+    min-height: 250px;
+    transition: 0.35s;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card::after {
+    content: "</>";
+    position: absolute;
+    right: 20px;
+    bottom: 5px;
+    font-family: monospace;
+    font-size: 5rem;
+    color: rgba(232,121,69,.06);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(232,121,69,.6);
+}
+
+.project-type {
+    font-family: monospace;
+    color: var(--orange);
+    font-size: 0.78rem;
+}
+
+.project-card h3 {
+    font-size: 1.4rem;
+    margin: 20px 0 10px;
+}
+
+.project-card p {
+    color: var(--gray);
+    font-size: 0.92rem;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 25px;
+}
+
+.project-tags span {
+    font-size: 0.7rem;
+    border: 1px solid var(--border);
+    padding: 5px 9px;
+    border-radius: 5px;
+}
+
+/* =========================
+   POETRY
+========================= */
+.poetry {
+    text-align: center;
+    padding-top: 130px;
+    padding-bottom: 130px;
+}
+
+.poetry-mark {
+    font-family: Georgia, serif;
+    color: var(--orange);
+    font-size: 4rem;
+}
+
+.poetry h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 400;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.2;
+}
+
+.poetry p {
+    color: var(--gray);
+    margin-top: 20px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+.contact-box {
+    border: 1px solid var(--border);
+    background: var(--card);
+    border-radius: 18px;
+    padding: 50px;
+    text-align: center;
+}
+
+.contact-box h2 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    letter-spacing: -3px;
+}
+
+.contact-box p {
+    color: var(--gray);
+    margin: 15px auto 30px;
+    max-width: 550px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.contact-links a {
+    border: 1px solid var(--border);
+    padding: 11px 17px;
+    border-radius: 7px;
+    transition: .3s;
+}
+
+.contact-links a:hover {
+    border-color: var(--orange);
+    color: var(--orange);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    max-width: 1150px;
+    margin: auto;
+    padding: 30px 25px;
+    border-top: 1px solid var(--border);
+    color: var(--gray);
+    display: flex;
+    justify-content: space-between;
+    font-size: .8rem;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.7s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 850px) {
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: #171514;
+        padding: 25px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    body.light .nav-links {
+        background: #fffaf3;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 90px;
+    }
+
+    .hero h1 {
+        letter-spacing: -4px;
+    }
+
+    .hero-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .visual {
+        width: 90%;
+        margin: auto;
+    }
+
+    .terminal {
+        right: -10px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 550px) {
+
+    section {
+        padding: 75px 18px;
+    }
+
+    nav {
+        padding: 0 18px;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    .photo-frame {
+        width: 245px;
+        height: 300px;
+    }
+
+    .terminal {
+        width: 220px;
+        font-size: .65rem;
+        right: -15px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-box,
+    .contact-box {
+        padding: 25px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background-grid"></div>
+<div class="orb"></div>
+<div class="orb two"></div>
+
+<!-- ================= HEADER ================= -->
+<header>
+<nav>
+
+    <a href="#home" class="logo">
+        RICA<span>.</span>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+        <button class="icon-btn" id="themeBtn">☼</button>
+        <button class="menu-btn" id="menuBtn">☰</button>
+    </div>
+
+</nav>
+</header>
+
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+
+    <div class="hero-content reveal">
+
+        <div class="eyebrow">// HELLO, WORLD</div>
+
+        <h1>
+            I'm<br>
+            Rica <span>May.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+            A Computer Science student who enjoys turning
+            ideas into code — and thoughts into poetry.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#projects" class="btn primary">
+                View My Work
+            </a>
+
+            <a href="#contact" class="btn secondary">
+                Contact Me →
+            </a>
+        </div>
+
+    </div>
+
+
+    <div class="visual reveal">
+
+        <div class="photo-frame">
+    <img src="profile.jpg" alt="Rica May N. Del Rosario">
+        </div>
+
+        <div class="photo-label">
+            BSCS / STUDENT / CREATIVE
+        </div>
+
+        <div class="terminal">
+
+            <div class="terminal-top">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+
+            <div>
+                <span class="code-gray">const</span>
+                <span class="code-orange">rica</span> = {
+            </div>
+
+            <div>
+                &nbsp;&nbsp;name:
+                <span class="code-orange">'Rica May'</span>,
+            </div>
+
+            <div>
+                &nbsp;&nbsp;course:
+                <span class="code-orange">'BSCS'</span>,
+            </div>
+
+            <div>
+                &nbsp;&nbsp;passion:
+                <span class="code-orange">'create'</span>,
+            </div>
+
+            <div>
+                &nbsp;&nbsp;hobby:
+                <span class="code-orange">'poetry'</span>
+            </div>
+
+            <div>};</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+
+    <div class="eyebrow reveal">// ABOUT ME</div>
+
+    <h2 class="section-title reveal">
+        Code is logic.<br>
+        Creativity is everything else.
+    </h2>
+
+    <div class="about-box reveal">
+
+        <div class="about-grid">
+
+            <div>
+
+                <p class="quote">
+                    “Between lines of code,
+                    I find space for words.”
+                </p>
+
+                <br>
+
+                <p>
+                    I am <strong>Rica May N. Del Rosario</strong>,
+                    a 21-year-old Bachelor of Science in
+                    Computer Science student at
+                    <strong>Catanduanes State University</strong>.
+                </p>
+
+                <br>
+
+                <p>
+                    I am continuously developing my skills in
+                    programming, algorithms, data structures,
+                    object-oriented programming and web development.
+                </p>
+
+            </div>
+
+            <div class="info-list">
+
+                <div class="info-item">
+                    <span>Name</span>
+                    <strong>Rica May N. Del Rosario</strong>
+                </div>
+
+                <div class="info-item">
+                    <span>Age</span>
+                    <strong>21</strong>
+                </div>
+
+                <div class="info-item">
+                    <span>Program</span>
+                    <strong>BS Computer Science</strong>
+                </div>
+
+                <div class="info-item">
+                    <span>University</span>
+                    <strong>Catanduanes State University</strong>
+                </div>
+
+                <div class="info-item">
+                    <span>Hobby</span>
+                    <strong>Writing Poetry</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+<section id="skills">
+
+    <div class="eyebrow reveal">// WHAT I LEARN</div>
+
+    <h2 class="section-title reveal">
+        My learning stack.
+    </h2>
+
+    <p class="section-description reveal">
+        The subjects and technical areas that continue
+        to shape my journey as a Computer Science student.
+    </p>
+
+
+    <div class="skills-grid">
+
+        <div class="skill-card reveal">
+            <span class="skill-number">01 / PROGRAMMING</span>
+            <h3>C++ Programming</h3>
+            <p>
+                Building programs, solving problems and
+                practicing algorithmic thinking.
+            </p>
+        </div>
+
+        <div class="skill-card reveal">
+            <span class="skill-number">02 / ALGORITHMS</span>
+            <h3>Data Structures & Algorithms</h3>
+            <p>
+                Learning efficient ways to organize,
+                process and search data.
+            </p>
+        </div>
+
+        <div class="skill-card reveal">
+            <span class="skill-number">03 / DISCRETE MATH</span>
+            <h3>Discrete Structures 2</h3>
+            <p>
+                Exploring mathematical structures,
+                logic, counting and problem solving.
+            </p>
+        </div>
+
+        <div class="skill-card reveal">
+            <span class="skill-number">04 / OOP</span>
+            <h3>Object-Oriented Programming</h3>
+            <p>
+                Working with classes, objects,
+                encapsulation, inheritance and polymorphism.
+            </p>
+        </div>
+
+        <div class="skill-card reveal">
+            <span class="skill-number">05 / WEB</span>
+            <h3>Web Development</h3>
+            <p>
+                Creating responsive and interactive
+                websites using HTML, CSS and JavaScript.
+            </p>
+        </div>
+
+        <div class="skill-card reveal">
+            <span class="skill-number">06 / MINDSET</span>
+            <h3>Continuous Learning</h3>
+            <p>
+                Improving through experimentation,
+                practice and new challenges.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects">
+
+    <div class="eyebrow reveal">// SELECTED WORK</div>
+
+    <h2 class="section-title reveal">
+        Things I've worked on.
+    </h2>
+
+    <p class="section-description reveal">
+        A collection of academic projects, programming
+        activities and creative work.
+    </p>
+
+
+    <div class="filters reveal">
+
+        <button class="filter-btn active" data-filter="all">
+            All
+        </button>
+
+        <button class="filter-btn" data-filter="programming">
+            Programming
+        </button>
+
+        <button class="filter-btn" data-filter="academic">
+            Academic
+        </button>
+
+        <button class="filter-btn" data-filter="project">
+            Project
+        </button>
+
+    </div>
+
+
+    <div class="projects-grid">
+
+        <article class="project-card reveal" data-category="project">
+
+            <span class="project-type">01 / PORTFOLIO</span>
+
+            <h3>Personal Portfolio</h3>
+
+            <p>
+                A responsive personal website designed
+                to showcase my skills, projects and
+                Computer Science journey.
+            </p>
+
+            <div class="project-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+            </div>
+
+        </article>
+
+
+        <article class="project-card reveal" data-category="academic">
+
+            <span class="project-type">02 / OOP</span>
+
+            <h3>Object-Oriented Programming</h3>
+
+            <p>
+                Programming activities focused on
+                classes, objects, encapsulation,
+                inheritance and polymorphism.
+            </p>
+
+            <div class="project-tags">
+                <span>C++</span>
+                <span>OOP</span>
+            </div>
+
+        </article>
+
+
+        <article class="project-card reveal" data-category="programming">
+
+            <span class="project-type">03 / DSA</span>
+
+            <h3>Data Structures & Algorithms</h3>
+
+            <p>
+                Implementations and exercises involving
+                searching, recursion, data organization
+                and algorithmic problem solving.
+            </p>
+
+            <div class="project-tags">
+                <span>C++</span>
+                <span>Algorithms</span>
+                <span>Recursion</span>
+            </div>
+
+        </article>
+
+
+        <article class="project-card reveal" data-category="academic">
+
+            <span class="project-type">04 / DISCRETE</span>
+
+            <h3>Discrete Structures 2</h3>
+
+            <p>
+                Academic exercises involving counting,
+                logic, mathematical structures and
+                problem-solving techniques.
+            </p>
+
+            <div class="project-tags">
+                <span>Logic</span>
+                <span>Counting</span>
+                <span>Mathematics</span>
+            </div>
+
+        </article>
+
+
+            
+        </article>
+
+
+        <article class="project-card reveal" data-category="programming">
+
+            <span class="project-type">06 / PRACTICE</span>
+
+            <h3>C++ Programming Activities</h3>
+
+            <p>
+                Various programming exercises focused
+                on developing logical thinking and
+                computational problem solving.
+            </p>
+
+            <div class="project-tags">
+                <span>C++</span>
+                <span>Problem Solving</span>
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ================= POETRY ================= -->
+<section class="poetry reveal">
+
+    <div class="poetry-mark">“</div>
+
+    <h2>
+        I write algorithms to solve problems,
+        and poems to understand them.
+    </h2>
+
+    <p>
+        — Rica May N. Del Rosario
+    </p>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+
+    <div class="contact-box reveal">
+
+        <div class="eyebrow">// LET'S CONNECT</div>
+
+        <h2>
+            Have an idea?
+            Let's build it.
+        </h2>
+
+        <p>
+            Whether it's a project, collaboration,
+            programming discussion or simply a conversation,
+            feel free to reach out.
+        </p>
+
+        <div class="contact-links">
+
+            <a href="mailto:ricamayd349@gmail.com">
+                ✉ Email
+            </a>
+
+            <a href="https://www.facebook.com/ricamay.delrosario.54"
+               target="_blank">
+                Facebook
+            </a>
+
+            <a href="tel:09388300349">
+                ☎ 09388300349
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+<footer>
+
+    <span>© 2026 Rica May N. Del Rosario</span>
+
+    <span>
+        Built with code & creativity.
+    </span>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+
+    menuBtn.textContent =
+        navLinks.classList.contains("open") ? "×" : "☰";
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuBtn.textContent = "☰";
+    });
+});
+
+
+/* =========================
+   DARK / LIGHT MODE
+========================= */
+
+const themeBtn = document.getElementById("themeBtn");
+
+themeBtn.addEventListener("click", () => {
+
+    document.body.classList.toggle("light");
+
+    if (document.body.classList.contains("light")) {
+        themeBtn.textContent = "☾";
+    } else {
+        themeBtn.textContent = "☼";
+    }
+
+});
+
+
+/* =========================
+   PROJECT FILTER
+========================= */
+
+const filterButtons =
+    document.querySelectorAll(".filter-btn");
+
+const projectCards =
+    document.querySelectorAll(".project-card");
+
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        filterButtons.forEach(btn =>
+            btn.classList.remove("active")
+        );
+
+        button.classList.add("active");
+
+        const filter = button.dataset.filter;
+
+        projectCards.forEach(card => {
+
+            if (
+                filter === "all" ||
+                card.dataset.category === filter
+            ) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+    });
+
+});
+
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+document.querySelectorAll(".reveal").forEach(element => {
+    observer.observe(element);
+});
+
+
+/* =========================
+   TYPEWRITER EFFECT
+========================= */
+
+const terminalText =
+    document.querySelector(".terminal");
+
+let blink = true;
+
+setInterval(() => {
+
+    blink = !blink;
+
+    terminalText.style.transform =
+        blink ? "translateY(0)" : "translateY(-2px)";
+
+}, 1500);
+
+</script>
+
+</body>
+</html>
