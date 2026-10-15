@@ -621,60 +621,77 @@ footer {
    MOBILE
 ========================= */
 @media (max-width: 850px) {
-  body {
-    background: #FFF8F0 !important; 
-    color: #222 !important; 
-  }
 
-  .navbar, nav {
-    background: white !important; 
-    border-bottom: 2px solid #ffb88c !important;
-  }
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background: white !important; 
-    flex-direction: column; 
-    padding: 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
-  }
-  .nav-links a {
-    color: #111 !important; 
-    font-size: 18px; 
-    padding: 12px;
-    border-bottom: 1px solid #eee; //
-  }
-  .nav-links.open { display: flex; }
-  .menu-btn { display: block; color: #111 !important; } 
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: #171514;
+        padding: 25px;
+        flex-direction: column;
+        gap: 20px;
+    }
+       <script>
+    const btn=document.querySelector('.menu-btn');
+    const links=document.querySelector('.nav-links');
+    btn.addEventListener('click',()=>{links.classList.toggle('open')});
+    </script>
+   
 
-  
-  .hero {
-    grid-template-columns: 1fr !important; 
-    background: white; 
-    margin: 15px; 
-    border-radius: 25px; 
-    padding: 25px !important;
-    box-shadow: 0 8px 30px rgba(255,184,140,0.3); 
-    border: 2px solid #FFE0C8;
-    text-align: center;
-  }
-  .hero img {
-    width: 200px !important;
-    border-radius: 20px !important;
-    border: 4px solid #ffb88c; 
-  }
+    body.light .nav-links {
+        background: #fffaf3;
+    }
 
-  .btn, button, .btn-primary {
-    background: linear-gradient(135deg, #ff8a5c, #ffb88c) !important;
-    color: white !important;
-    border-radius: 50px !important; 
-    width: 100%; 
-    border: none !important;
-  }
-   }
+    .nav-links.open {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 90px;
+    }
+
+    .hero h1 {
+        letter-spacing: -4px;
+    }
+
+    .hero-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .visual {
+        width: 90%;
+        margin: auto;
+    }
+
+    .terminal {
+        right: -10px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
 @media (max-width: 550px) {
 
     section {
