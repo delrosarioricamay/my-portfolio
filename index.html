@@ -633,6 +633,12 @@ footer {
         flex-direction: column;
         gap: 20px;
     }
+       <script>
+    const btn=document.querySelector('.menu-btn');
+    const links=document.querySelector('.nav-links');
+    btn.addEventListener('click',()=>{links.classList.toggle('open')});
+    </script>
+   
 
     body.light .nav-links {
         background: #fffaf3;
