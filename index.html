@@ -621,16 +621,14 @@ footer {
    MOBILE
 ========================= */
 @media (max-width: 850px) {
-  // === CHANGED: Iba kulay background sa mobile lang ===
   body {
-    background: #FFF8F0 !important; // CHANGED - from black to beige sa mobile
-    color: #222 !important; // CHANGED - from white to black text sa mobile
+    background: #FFF8F0 !important; 
+    color: #222 !important; 
   }
 
-  // === CHANGED: Navbar design iba sa mobile ===
   .navbar, nav {
-    background: white !important; // CHANGED - white nav sa mobile
-    border-bottom: 2px solid #ffb88c !important; // CHANGED - dagdag border
+    background: white !important; 
+    border-bottom: 2px solid #ffb88c !important;
   }
   .nav-links {
     display: none;
@@ -638,120 +636,45 @@ footer {
     top: 70px;
     left: 0;
     width: 100%;
-    background: white !important; // CHANGED - white menu
-    flex-direction: column; // CHANGED - patayo na
+    background: white !important; 
+    flex-direction: column; 
     padding: 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1); // CHANGED - dagdag shadow
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
   }
   .nav-links a {
-    color: #111 !important; // CHANGED - black text sa menu
-    font-size: 18px; // CHANGED - mas malaki sa mobile
+    color: #111 !important; 
+    font-size: 18px; 
     padding: 12px;
-    border-bottom: 1px solid #eee; // CHANGED - line kada menu
+    border-bottom: 1px solid #eee; //
   }
-  .nav-links.open { display: flex; } // CHANGED - ito nagpapalabas ng menu pag click ☰
-  .menu-btn { display: block; color: #111 !important; } // CHANGED - pinakita button
+  .nav-links.open { display: flex; }
+  .menu-btn { display: block; color: #111 !important; } 
 
-  // === CHANGED: Hero section - iba design sa mobile ===
+  
   .hero {
-    grid-template-columns: 1fr !important; // CHANGED - from 2 columns to 1 column
-    background: white; // CHANGED - white card sa mobile
-    margin: 15px; // CHANGED - may space sa gilid
-    border-radius: 25px; // CHANGED - bilog kanto
+    grid-template-columns: 1fr !important; 
+    background: white; 
+    margin: 15px; 
+    border-radius: 25px; 
     padding: 25px !important;
-    box-shadow: 0 8px 30px rgba(255,184,140,0.3); // CHANGED - peach shadow
-    border: 2px solid #FFE0C8; // CHANGED - peach border
-    text-align: center; // CHANGED - gitna lahat
+    box-shadow: 0 8px 30px rgba(255,184,140,0.3); 
+    border: 2px solid #FFE0C8;
+    text-align: center;
   }
   .hero img {
-    width: 200px !important; // CHANGED - mas maliit pic sa mobile
-    border-radius: 20px !important; // CHANGED - bilog pic
-    border: 4px solid #ffb88c; // CHANGED - orange border sa pic
+    width: 200px !important;
+    border-radius: 20px !important;
+    border: 4px solid #ffb88c; 
   }
 
-  // === CHANGED: Buttons iba kulay sa mobile ===
   .btn, button, .btn-primary {
-    background: linear-gradient(135deg, #ff8a5c, #ffb88c) !important; // CHANGED - orange gradient
+    background: linear-gradient(135deg, #ff8a5c, #ffb88c) !important;
     color: white !important;
-    border-radius: 50px !important; // CHANGED - super bilog button
-    width: 100%; // CHANGED - full width sa phone
+    border-radius: 50px !important; 
+    width: 100%; 
     border: none !important;
   }
    }
-   //
-   @media (max-width: 850px) {
-
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 75px;
-        left: 0;
-        width: 100%;
-        background: #171514;
-        padding: 25px;
-        flex-direction: column;
-        gap: 20px;
-    }
-       <script>
-    const btn=document.querySelector('.menu-btn');
-    const links=document.querySelector('.nav-links');
-    btn.addEventListener('click',()=>{links.classList.toggle('open')});
-    </script>
-   
-
-    body.light .nav-links {
-        background: #fffaf3;
-    }
-
-    .nav-links.open {
-        display: flex;
-    }
-
-    .menu-btn {
-        display: block;
-    }
-
-    .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 90px;
-    }
-
-    .hero h1 {
-        letter-spacing: -4px;
-    }
-
-    .hero-subtitle {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
-
-    .visual {
-        width: 90%;
-        margin: auto;
-    }
-
-    .terminal {
-        right: -10px;
-    }
-
-    .about-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .skills-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
 @media (max-width: 550px) {
 
     section {
