@@ -621,6 +621,65 @@ footer {
    MOBILE
 ========================= */
 @media (max-width: 850px) {
+  // === CHANGED: Iba kulay background sa mobile lang ===
+  body {
+    background: #FFF8F0 !important; // CHANGED - from black to beige sa mobile
+    color: #222 !important; // CHANGED - from white to black text sa mobile
+  }
+
+  // === CHANGED: Navbar design iba sa mobile ===
+  .navbar, nav {
+    background: white !important; // CHANGED - white nav sa mobile
+    border-bottom: 2px solid #ffb88c !important; // CHANGED - dagdag border
+  }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: white !important; // CHANGED - white menu
+    flex-direction: column; // CHANGED - patayo na
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); // CHANGED - dagdag shadow
+  }
+  .nav-links a {
+    color: #111 !important; // CHANGED - black text sa menu
+    font-size: 18px; // CHANGED - mas malaki sa mobile
+    padding: 12px;
+    border-bottom: 1px solid #eee; // CHANGED - line kada menu
+  }
+  .nav-links.open { display: flex; } // CHANGED - ito nagpapalabas ng menu pag click ☰
+  .menu-btn { display: block; color: #111 !important; } // CHANGED - pinakita button
+
+  // === CHANGED: Hero section - iba design sa mobile ===
+  .hero {
+    grid-template-columns: 1fr !important; // CHANGED - from 2 columns to 1 column
+    background: white; // CHANGED - white card sa mobile
+    margin: 15px; // CHANGED - may space sa gilid
+    border-radius: 25px; // CHANGED - bilog kanto
+    padding: 25px !important;
+    box-shadow: 0 8px 30px rgba(255,184,140,0.3); // CHANGED - peach shadow
+    border: 2px solid #FFE0C8; // CHANGED - peach border
+    text-align: center; // CHANGED - gitna lahat
+  }
+  .hero img {
+    width: 200px !important; // CHANGED - mas maliit pic sa mobile
+    border-radius: 20px !important; // CHANGED - bilog pic
+    border: 4px solid #ffb88c; // CHANGED - orange border sa pic
+  }
+
+  // === CHANGED: Buttons iba kulay sa mobile ===
+  .btn, button, .btn-primary {
+    background: linear-gradient(135deg, #ff8a5c, #ffb88c) !important; // CHANGED - orange gradient
+    color: white !important;
+    border-radius: 50px !important; // CHANGED - super bilog button
+    width: 100%; // CHANGED - full width sa phone
+    border: none !important;
+  }
+   }
+   //
+   @media (max-width: 850px) {
 
     .nav-links {
         display: none;
